@@ -32,4 +32,6 @@ addBtn.addEventListener('click',() => {
         alert("success")
     })
     .catch(err=> console.log(err))
-});
+})
+
+
