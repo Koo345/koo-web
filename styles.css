@@ -1,0 +1,137 @@
+/* There is a default browser behavior that create a white spacing/
+padding and margin on the body element. 
+To remove this, we set the entire page margin and padding to 0. 
+This is called CSS reset */
+
+* {
+    /*Reset the page so there is no padding and margin*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Styling for the page starts here */
+
+body {
+    text-align: center;
+}
+
+/* Navigation Section */
+/* Flex is used to perform 
+- layouting left to right
+- Normally one line
+- Normally use for features, eg: Navigation bar, Site menu, etc
+- For layouting of a page, preferably using grid
+*/
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    /* Put the menu and ul/li next to each other */
+    display: flex;
+    /* put the item to be centered vertically */
+    align-items: center;
+    /* put the item left and right , add spacung in between them */
+    /* Homework: read notes
+    Discover the options: space-evenly,space-between
+    start, end, center, */
+    justify-content:space-between
+}
+
+nav ul {
+    /* Remove the bullet on the list */
+    list-style: none;
+    /* Put the list item horizontally */
+    display: flex;
+    /* Add spacing , gap 20px between the item */
+    gap: 20px; 
+}
+
+nav ul li a {
+ color: white;
+ text-decoration: none;   
+}
+
+nav ul li a:hover {
+    color:yellow;
+}
+
+/* Hero section */
+header {
+    background-color: #f4f4f4;
+    padding:50px 20px;
+}
+
+header img {
+    /* Set the image as big as the header */
+    width: 100%; 
+    /* Maximum width is 600px */
+    max-width: 600px; 
+}
+header button {
+    background-color: blue;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+    margin-top: 10px;
+    border: none;
+}
+
+/* Feature section */
+/* Calling class using . */
+/* Grid is used to perform 
+- layouting left to right, 
+- normally multiple row ,
+- normally use for layouting of a page */
+.grid-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:10px;
+    padding:20px 40px;
+}
+.grid-item {
+    background-color: lightblue;
+    padding: 20px;
+    font-size: 18px;
+    /* to bold a text */
+    font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding:15px;
+    margin-top:20px;
+}
+
+/* Media Query */ 
+/* For mobile phone  and tablets */
+
+@media (max-width:768px){
+    footer {
+        background-color: red;
+    }
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px){
+    footer {
+        background-color: blue;
+    }
+/* For mobile view, The box will be top to the bottom*/
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tooltip {
+    background-color: white;
+    border:1px solid black;
+    padding:5px;
+    /* //tis will be used later to show the tooltip on the chart */
+    position:absolute; 
+    /* hide the tooltip for a while */
+    display:none;
+}
